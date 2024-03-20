@@ -1,7 +1,7 @@
 
 CREATE TABLE pacientes (
 	id_paciente SERIAL PRIMARY KEY,
-	nome_paciente varchar(100),
+	nome_paciente varchar(250),
 	data_nasc DATE
 )
 
@@ -22,22 +22,23 @@ SELECT * FROM pacientes
 
 CREATE TABLE medicos (
 	id_medico SERIAL PRIMARY KEY,
-	nome_med varchar(100),
-	especialidade varchar(50)
+	nome_med varchar(250),
+	especialidade varchar(100)
 )
 
 INSERT INTO medicos (nome_med, especialidade) 
 VALUES
-    ('Dr. José Silva', 'Clínica Geral'),
-    ('Dra. Ana Oliveira', 'Cardiologia'),
-    ('Dr. Carlos Souza', 'Ortopedia'),
-    ('Dra. Juliana Santos', 'Pediatria'),
-    ('Dr. André Ferreira', 'Dermatologia'),
-    ('Dra. Laura Costa', 'Ginecologia'),
-    ('Dr. Marcos Lima', 'Oncologia'),
-    ('Dra. Patrícia Oliveira', 'Neurologia'),
-    ('Dr. Renato Pereira', 'Psiquiatria'),
-    ('Dra. Fernanda Fernandes', 'Endocrinologia');
+('Dr. Ricardo Alves', 'Clínica Geral'),
+('Dra. Camila Costa', 'Cardiologia'),
+('Dr. Marcelo Fernandes', 'Ortopedia'),
+('Dra. Larissa Oliveira', 'Pediatria'),
+('Dr. Rafael Silva', 'Dermatologia'),
+('Dra. Bruna Santos', 'Ginecologia'),
+('Dr. Gabriel Lima', 'Oncologia'),
+('Dra. Vanessa Pereira', 'Neurologia'),
+('Dr. Lucas Ferreira', 'Psiquiatria'),
+('Dra. Beatriz Rodrigues', 'Endocrinologia');
+
 
 SELECT * FROM medicos
 
@@ -52,15 +53,16 @@ CREATE TABLE registros (
 
 INSERT INTO registros (id_paciente, id_medico, data_reg) 
 VALUES
-    (1, 1, '2023-05-15'),
-    (2, 2, '2022-11-10'),
-    (3, 3, '2024-02-20'),
-    (4, 4, '2023-09-05'),
-    (5, 5, '2024-01-30'),
-    (6, 6, '2023-07-18'),
-    (7, 7, '2022-08-25'),
-    (8, 8, '2024-03-10'),
-    (9, 9, '2023-04-02'),
-    (10, 10, '2022-12-12');
+    (1, 1, '2023-05-25'),
+    (2, 2, '2022-11-20'),
+    (3, 3, '2024-02-10'),
+    (4, 4, '2023-09-15'),
+    (5, 5, '2024-01-20'),
+    (6, 6, '2023-07-28'),
+    (7, 7, '2022-09-05'),
+    (8, 8, '2024-03-15'),
+    (9, 9, '2023-04-10'),
+    (10, 10, '2022-12-20');
+
 
 SELECT * FROM registros
