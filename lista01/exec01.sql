@@ -13,7 +13,7 @@ VALUES
     ('9788535908061', 'O Alquimista', 'Editora Rocco', '1988-01-01'),
     ('9788535909556', 'Ensaio sobre a Cegueira', 'Companhia das Letras', '1995-01-01'),
     ('9788535913904', 'O Conde de Monte Cristo', 'Zahar', '1844-01-01'),
-    ('9788577995779', 'O Príncipe', 'Editora 34', '1513-01-01'),
+    ('9788577995779', 'Arte da Guerra', 'Editora 34', '1513-01-01'),
     ('9788573264248', 'O Nome da Rosa', 'Editora BestBolso', '1980-01-01'),
     ('9788537801854', 'Moby Dick', 'Cosac Naify', '1851-01-01'),
     ('9788537815929', 'A Revolta de Atlas', 'Editora Aleph', '1957-01-01');
@@ -50,3 +50,16 @@ CREATE TABLE livros_autores (
 )
 
 SELECT * FROM livros_autores
+
+
+SELECT titulo, nome_autor FROM livros INNER JOIN autores
+ON livros.isbn = autores.id_autor
+
+
+SELECT nome_autor, titulo FROM autores INNER JOIN livros
+ON autores.id_autor = livros.isbn
+WHERE nome_autor = 'Sun Tzu' OR nome_autor = 'sun tzu'
+
+SELECT titulo, nome_autor FROM livros INNER JOIN autores
+ON livros.isbn = autores.id_autor
+WHERE titulo = '1513'
