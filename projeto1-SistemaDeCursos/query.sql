@@ -149,7 +149,59 @@ END;
 
 -- Comandos DML (Data Manipulation Language)
 
--- Nenhum comando DML necessário nesta etapa de prova de conceito.
+-- Inserir dados na tabela Contato
+INSERT INTO Contato (idContato, Telefone, Celular, Email)
+VALUES
+    (1, '123456789', '987654321', 'contato1@example.com'),
+    (2, '987654321', '123456789', 'contato2@example.com');
+
+-- Inserir dados na tabela Endereco
+INSERT INTO Endereco (idEndereco, Cidade, Rua, Email)
+VALUES
+    (1, 'Cidade A', 'Rua 1', 'endereco1@example.com'),
+    (2, 'Cidade B', 'Rua 2', 'endereco2@example.com');
+
+-- Inserir dados na tabela EnderecoContato
+INSERT INTO EnderecoContato (idContato, idEndereco)
+VALUES
+    (1, 1),
+    (2, 2);
+
+-- Inserir dados na tabela Pessoa
+INSERT INTO Pessoa (idPessoa, nome, cpf, idade, idEndereco, idContato)
+VALUES
+    (1, 'Fulano', '123.456.789-00', 30, 1, 1),
+    (2, 'Ciclano', '987.654.321-00', 25, 2, 2);
+
+-- Inserir dados na tabela Formado
+INSERT INTO Formado (idFormado, idPessoa, ativo)
+VALUES
+    (1, 1, 1),
+    (2, 2, 0);
+
+-- Inserir dados na tabela Departamento
+INSERT INTO Departamento (NomeDepartamento, Numero, Coordenador)
+VALUES
+    ('Departamento A', 101, 'Coordenador A'),
+    ('Departamento B', 102, 'Coordenador B');
+
+-- Inserir dados na tabela Curso
+INSERT INTO Curso (nomeCurso, NomeDepartamento)
+VALUES
+    ('Curso A', 'Departamento A'),
+    ('Curso B', 'Departamento B');
+
+-- Inserir dados na tabela Disciplina
+INSERT INTO Disciplina (idDisciplina, nomeDisciplina, diciplinaCurso)
+VALUES
+    (1, 'Disciplina A', 'Curso A'),
+    (2, 'Disciplina B', 'Curso B');
+
+-- Inserir dados na tabela DisciplinaCurso
+INSERT INTO DisciplinaCurso (idDisciplina, nomeCurso)
+VALUES
+    (1, 'Curso A'),
+    (2, 'Curso B');
 
 -- Comandos DQL (Data Query Language) com Provas de Conceito
 
